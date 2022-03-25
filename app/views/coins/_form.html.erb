@@ -23,7 +23,14 @@
 
   <div class="field">
     <%= form.label :url_image %>
-    <%= form.text_field :url_image %>
+    <div style="display: flex">
+      <%= form.text_field :url_image %>
+      <% if coin.url_image %>
+        <%= image_tag coin.url_image, height: 25 %>
+      <% end %>
+    </div>
+
+
   </div>
 
   <div class="actions">

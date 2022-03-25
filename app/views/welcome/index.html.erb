@@ -1,16 +1,9 @@
-<h1>Welcome</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<p> <%= "gustavo".reverse %> </p>
-<% variavel = "t" %> </p>
-<p> <%= variavel %> </p>
-<p> <%#= "gustavo".reverse %> </p>
-<p> <%= "hoje é #{Date.today} "%> </p>
-<ul>
-    <li>
-    <%= link_to "Moedas", coins_path %>
-    
-    </li>
-    <li>
-        <a href="/coins">Moedas</a>
-    </li>
-</ul>
+<h1>Welcome<%= @nome && ": #{@nome}" %></h1>
+
+<p> "hoje é <%= date_format(Time.now)%>" </p>
+
+<% if @nome %>
+    <p> <%= @nome && @nome.reverse %> </p>
+<%end%>
+
+<%= render 'menu'%>
